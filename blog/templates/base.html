@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'ver_posts' %}">Posts</a></li>
+            <li><a href="{% url 'crear_post' %}">Crear post</a></li>
+            <li><a href="{% url 'crear_usuarios' %}">Crear usuario</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

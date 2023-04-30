@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <ul>
+    {% for post in posts %}
+        <h1 style="background-color: grey;">{{post.titulo}}</h1>
+        <h4>Autor: {{post.autor}}</h4>
+        <p>{{post.contenido}}</p>
+        <p>Fecha de creación: {{post.fecha}}</p>
+    {% endfor %}
+    </ul>
+{% endblock %}
